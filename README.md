@@ -6,7 +6,7 @@ Automates pet crafting in RCU using AutoHotkey — saves time and helps craft st
 
 ![PetMergeMacro](https://i.imgur.com/oBGIDgC.png)
 
-> [!NOTE]
+> **NOTE:**
 > This macro assumes Crafting Mastery level 100 and that the Remote Computer feature is unlocked.
 
 ---
