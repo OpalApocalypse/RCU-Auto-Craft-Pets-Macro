@@ -4,7 +4,7 @@ Automates pet crafting in RCU using AutoHotkey — saves time and helps craft st
 
 ---
 
-
+![PetMergeMacro](https://i.imgur.com/oBGIDgC.png)
 
 > **Note:** This macro assumes Crafting Mastery level 100 and that the Remote Computer feature is unlocked.
 
@@ -23,10 +23,9 @@ Automates pet crafting in RCU using AutoHotkey — saves time and helps craft st
 
 ## Usage & Tips
 
-- Ensure the game window has focus when running macros.
-- Recommended: set Windows scaling to 100% and run at the resolution you tested with the script.
-- If text/buttons shift after a game update, re-record or update pixel/coordinate checks in the script.
-- If you experience accidental clicks, enable the script's safety timeout (see `safety` section in config).
+- Literally just Press F1, then choose your option. That's about it.
+- Recommended you set Windows display scaling to 100% so there's no mouse/coordinate clicking issues.
+- If you use multiple sessions, have the one you want running it in focus before clicking a button.
 
 ---
 
