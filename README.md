@@ -3,7 +3,7 @@
 # Made for N0NG Clan. <br>
 _Brought to you in part by ADHShe and the power of doing silly macros until it's 2AM when you work in 5 hours_<br>
 <br>
-If it isn't already obvious, this macro assumes you have 100 crafting and thus the Remote computer unlocked.<br>
+If it isn't already obvious, this macro assumes you have Crafting Mastery Lvl 100 so you can use the Remote computer unlocked.<br>
 <br>
 <b>Hotkeys:</b><br>
  ```
