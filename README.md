@@ -1,3 +1,5 @@
+![PetMergeMacro](https://i.imgur.com/oBGIDgC.png)
+
 # Made for N0NG Clan. <br>
 _Brought to you in part by ADHShe and the power of doing silly macros until it's 2AM when you work in 5 hours_
 <br>
