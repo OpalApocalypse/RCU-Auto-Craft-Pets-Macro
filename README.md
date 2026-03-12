@@ -19,5 +19,5 @@ Made for 800x600 resolution.<br>
 <br>
 <b>Upcoming Changes/Features:</b><br>
 
-- [ ] #1 <br>
-- [ ] #2
+- [ ] #1 [Pause after Single-Variant option completes](https://github.com/OpalApocalypse/RCU-Auto-Craft-Pets-Macro/issues/1) <br>
+- [ ] #2 [Eternals Only checkbox](https://github.com/OpalApocalypse/RCU-Auto-Craft-Pets-Macro/issues/2)
