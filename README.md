@@ -1,6 +1,6 @@
 # RCU Auto‑Craft Pets
 
-Automates pet crafting in RCU using AutoHotkey — saves time and helps raise crafting stats with hotkeys and a simple menu.
+Automates pet crafting in RCU using AutoHotkey — saves time and helps craft stronger pets with less effort.
 
 ---
 
