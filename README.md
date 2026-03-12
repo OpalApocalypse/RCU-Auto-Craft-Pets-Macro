@@ -16,4 +16,6 @@ Made for 800x600 resolution.<br>
 <br>
 Will move from Golden to Toxic to Galaxy, all in-sequence, no matter what. I've accounted for everything. (famous last words)<br>
 <br>
-One QoL change I'll make soon is just like when you Craft All Pets - when you run out, it just ends and pauses the macro. I'll do that for the single choices as well.
+<b>Changes-To-Be:</b><br>
+* Make single craft options pause after completed like the All Pets options do.<br>
+* Eternals / Mythics / Divine Only check boxes? Mainly for Eternals, but we'll see. Just got suggested this.<br>
