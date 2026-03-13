@@ -39,4 +39,5 @@ Automates pet crafting in RCU using AutoHotkey — saves time and helps craft st
 - [X] [Additional PixelSearch to detect if no crafting window is open](https://github.com/OpalApocalypse/RCU-Auto-Craft-Pets-Macro/issues/5) (#5)
 - [X] [Zoom out camera as a safety measure when using scroll wheel](https://github.com/OpalApocalypse/RCU-Auto-Craft-Pets-Macro/issues/6) (#6)
 - [ ] [Speed Selector: Slow/Normal/Fast](https://github.com/OpalApocalypse/RCU-Auto-Craft-Pets-Macro/issues/7) (#7)
+- [ ] [Click X before starting any loop](https://github.com/OpalApocalypse/RCU-Auto-Craft-Pets-Macro/issues/8) (#8)
 ---
