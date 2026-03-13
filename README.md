@@ -18,7 +18,7 @@ Automates pet crafting in RCU using AutoHotkey — saves time and helps craft st
 | <kbd>F1</kbd> | Start macro | Starts the macro and opens the menu |
 | <kbd>F2</kbd> | Pause / Resume | Toggles pause state |
 | <kbd>F3</kbd> | Open menu | Opens selection menu (also pauses macro while menu is open) |
-| <kbd>F4</kbd> | Stop macro | Terminates the macro script |
+| <kbd>F4</kbd> | Stop macro | Closes the .ahk script |
 
 ---
 
