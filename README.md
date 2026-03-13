@@ -31,13 +31,6 @@ Automates pet crafting in RCU using AutoHotkey — saves time and helps craft st
 ---
 
 ## Upcoming Changes to Next Release:
-
-- [X] [Pause after Single-Variant option completes](https://github.com/OpalApocalypse/RCU-Auto-Craft-Pets-Macro/issues/1) (#1)  
-- [ ] [Eternals Only checkbox](https://github.com/OpalApocalypse/RCU-Auto-Craft-Pets-Macro/issues/2) (#2)
-- [X] [Slow speed down in mainloop - misses the "Okay" click sometimes](https://github.com/OpalApocalypse/RCU-Auto-Craft-Pets-Macro/issues/4) (#3)
-- [X] [F2 not registering to pause](https://github.com/OpalApocalypse/RCU-Auto-Craft-Pets-Macro/issues/3) (#4)
-- [X] [Additional PixelSearch to detect if no crafting window is open](https://github.com/OpalApocalypse/RCU-Auto-Craft-Pets-Macro/issues/5) (#5)
-- [X] [Zoom out camera as a safety measure when using scroll wheel](https://github.com/OpalApocalypse/RCU-Auto-Craft-Pets-Macro/issues/6) (#6)
 - [ ] [Speed Selector: Slow/Normal/Fast](https://github.com/OpalApocalypse/RCU-Auto-Craft-Pets-Macro/issues/7) (#7)
-- [X] [Click X before starting any loop](https://github.com/OpalApocalypse/RCU-Auto-Craft-Pets-Macro/issues/8) (#8)
+- [ ] [Select Multiple Pet Types](https://github.com/OpalApocalypse/RCU-Auto-Craft-Pets-Macro/issues/9) (#9)
 ---
