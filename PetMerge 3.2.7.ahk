@@ -31,6 +31,8 @@ global SwitchingMode := false
 global MergeAllRequested := false
 global CraftAllMode := false  ; NEW: mode selector
 
+global PetTypeFilter := ""    ; Holds the text for the currently selected pet filter
+
 ; Debounce helper for F2 (declare as global so the hotkey label can use it)
 global lastF2 := 0
 
@@ -167,7 +169,7 @@ if ErrorLevel
 return
 
 ; ---------------------------
-; GUI selector WITH Merge All Option
+; GUI selector WITH Merge All Option + PetType filters
 ; ---------------------------
 ShowModeSelector:
 SelectorSubmitted := false
@@ -187,7 +189,6 @@ Gui, Add, Text, x45 y55 w140 Center, Crafts all pets at once.
 Gui, Add, Text, x45 y68 w140 Center, Good for XP.
 
 Gui, Font, s10, Segoe UI
-; Left column buttons, each now has g-label and sets CraftMode to actual variant
 Gui, Add, Button, x65 y98 w100 h27 gSelectCraftAll, All Types
 Gui, Add, Button, x14 y132 w62 h28 gSelectGoldenAll, Golden
 Gui, Add, Button, x84 y132 w62 h28 gSelectToxicAll, Toxic
@@ -205,7 +206,6 @@ Gui, Add, Text, x275 y55 w140 Center, Crafts one pet at a time.
 Gui, Add, Text, x275 y68 w140 Center, Better Shiny chance.
 
 Gui, Font, s10, Segoe UI
-; Right column buttons, unchanged assignments
 Gui, Add, Button, x295 y98 w100 h27 gSelectMergeAll, All Types
 Gui, Add, Button, x244 y132 w62 h28 gSelectGolden, Golden
 Gui, Add, Button, x314 y132 w62 h28 gSelectToxic, Toxic
@@ -213,18 +213,49 @@ Gui, Add, Button, x384 y132 w62 h28 gSelectGalaxy, Galaxy
 
 ; --- Vertical Center Line (cuts off below buttons) ---
 Gui, Add, Progress, x229 y10 w3 h162 -Smooth cBlack, 100
-
 ; --- Horizontal Line Across the Bottom ---
 Gui, Add, Progress, x0 y180 w460 h3 -Smooth cBlack, 100
 
-; --- Credit Line (raised, very small and centered) ---
-Gui, Font, s7, Segoe UI
-Gui, Add, Text, x0 y185 w460 Center, N0NG RCU Macro made by Cinnamowopal
+; --------- NEW FILTER SECTION ----------
+Gui, Font, s8, Segoe UI Bold
+Gui, Add, Text, x10 y195 w220 , Only Craft the Checked Types:
+Gui, Font, s8, Segoe UI
+Gui, Add, Checkbox, x10 y210 w75 h20 vChkMythical gSelectPetType, Mythical
+Gui, Add, Checkbox, x90 y210 w70 h20 vChkEternal gSelectPetType, Eternal
+Gui, Add, Checkbox, x180 y210 w70 h20 vChkSecret gSelectPetType, Secret
+Gui, Add, Checkbox, x260 y210 w70 h20 vChkDivine gSelectPetType, Divine
 
-Gui, Show, w460 h200, Rebirth Champions: Ultimate - Pet Merging Macro v3.1
+Gui, Font, s7, Segoe UI
+Gui, Add, Text, x0 y235 w460 Center, N0NG RCU Macro made by Cinnamowopal
+
+Gui, Show, w460 h250, Rebirth Champions: Ultimate - Pet Merging Macro v3.2
 
 while (!SelectorSubmitted)
     Sleep, 50
+return
+
+SelectPetType:
+    ; Only one at a time: Uncheck others when checking one
+    CtrlList := ["ChkMythical", "ChkEternal", "ChkSecret", "ChkDivine"]
+    For _, ctrl in CtrlList
+    {
+        if (A_GuiControl != ctrl)
+            GuiControl,, %ctrl%, 0
+    }
+    ; Set global PetTypeFilter according to which box is checked
+    PetTypeFilter := ""
+    GuiControlGet, myth,, ChkMythical
+    GuiControlGet, ete,, ChkEternal
+    GuiControlGet, sec,, ChkSecret
+    GuiControlGet, div,, ChkDivine
+    if (myth)
+        PetTypeFilter := "Mythical"
+    else if (ete)
+        PetTypeFilter := "Eternal"
+    else if (sec)
+        PetTypeFilter := "Secret"
+    else if (div)
+        PetTypeFilter := "Divine"
 return
 
 ; ----- Button Handlers ----- (unchanged)
@@ -301,6 +332,28 @@ Gui, ModeSelect:Destroy
 return
 
 ; ---------------------------
+; Function: Apply search filter if a pet type is chosen
+; ---------------------------
+ApplySearchFilterIfNeeded()
+{
+    global PetTypeFilter
+    if (PetTypeFilter = "")
+        return
+
+    ; Focus search bar (Client 271,434)
+    MouseMove, 271, 431, 0
+    Sleep, 100
+    Click, 271, 434, 1
+    Sleep, 100
+    ; Clear search field first (simulate Ctrl+A, Del)
+    SendInput ^a{Del}
+    Sleep, 50
+    ; Type in filter
+    SendInput %PetTypeFilter%
+    Sleep, 280
+}
+
+; ---------------------------
 ; One-time setup after selecting mode
 ; ---------------------------
 PrepareMode:
@@ -314,21 +367,30 @@ Loop, 3
         GoldenPets()
         Sleep, 400
         if IsGoldenOpen()
+        {
+            ApplySearchFilterIfNeeded()
             return
+        }
     }
     else if (CraftMode = "Toxic")
     {
         ToxicPets()
         Sleep, 400
         if IsToxicOpen()
+        {
+            ApplySearchFilterIfNeeded()
             return
+        }
     }
     else if (CraftMode = "Galaxy")
     {
         GalaxyPets()
         Sleep, 400
         if IsGalaxyOpen()
+        {
+            ApplySearchFilterIfNeeded()
             return
+        }
     }
 
     CloseOpenPanel()
